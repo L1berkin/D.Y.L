@@ -1,4 +1,4 @@
-import classes from './DesignListPage.module.css'
+import classes from './DesignListPage.module.scss'
 
 function DesignListPage() {
   return (
