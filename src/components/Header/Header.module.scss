@@ -2,10 +2,14 @@
 // До 1100px
 .Header {
   display: flex;
+  position: fixed;
+  width: 100%;
   align-items: center;
   height: $Header_height;
   padding: 0 2vw;
   border-bottom: 1px solid #ccc;
+  background: #fff;
+  z-index: 10;
   &:nth-child(n) {
     line-height: $Header_height;
   }
@@ -29,6 +33,7 @@
     height: $HeaderItem_height;
     padding: 0 15px 0 35px;
     font-weight: bold;
+    border: 1px solid #ccc;
     border-radius: $HeaderItem_height / 2;
     background: rgb(240, 240, 240);
     &:hover {
