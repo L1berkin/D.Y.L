@@ -1,15 +1,26 @@
 import Header from "./components/Header/Header";
 import Layout from "./hoc/Layout/Layout";
-import DesignListPage from "./pages/DesignListPage/DesignListPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import BlogPage from "./pages/BlogPage/BlogPage";
+import DesignersPage from "./pages/DesignersPage/DesignersPage";
+import VacanciesPage from "./pages/VacanciesPage/VacanciesPage";
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div>
+    <Fragment>
       <Header />
       <Layout>
-        <DesignListPage /> 
+        <Switch>
+          <Route exact path="/" component={DesignersPage} />
+          <Route path="/blog" component={BlogPage} />
+          <Route path="/vacancies" component={VacanciesPage} />
+          <Route path="/about" component={AboutPage} />
+          <Redirect to="/" />
+        </Switch>
       </Layout>
-    </div>
+    </Fragment>
   );
 }
 

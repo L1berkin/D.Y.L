@@ -2,9 +2,9 @@ import classes from './Layout.module.scss'
 
 function Layout({children}) {
   return (
-    <div className={classes.Layout}>
+    <main className={classes.Layout}>
       {children}
-    </div>
+    </main>
   );
 }
 

@@ -1,0 +1,19 @@
+// Colors
+$blue: rgb(55, 55, 255);
+$blueHover: rgb(55, 55, 220);
+
+$Header_height: 50px;
+$HeaderItem_height: 30px;
+
+
+@mixin Header_btn {
+  position: absolute;
+  height: $HeaderItem_height;
+  padding: 0 15px;
+  font-weight: bold;
+  border-radius: $HeaderItem_height / 2;
+  transition-duration: .3s;
+  &:hover {
+    box-shadow: 0 0 5px -2px black;
+  }
+}

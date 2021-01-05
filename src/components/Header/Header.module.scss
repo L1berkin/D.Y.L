@@ -1,17 +1,5 @@
-$Header_height: 50px;
-$HeaderItem_height: 30px;
-
-@mixin Header_btn {
-  position: absolute;
-  height: $HeaderItem_height;
-  padding: 0 15px;
-  font-weight: bold;
-  border-radius: $HeaderItem_height / 2;
-  &:hover {
-    box-shadow: 0 0 5px -2px black;
-  }
-}
-
+@import '../../assets/scss/variables.scss';
+// До 1100px
 .Header {
   display: flex;
   align-items: center;
@@ -28,6 +16,12 @@ $HeaderItem_height: 30px;
     font-size: 1.8em;
     font-weight: 900;
     margin-right: 3%;
+    &:hover {
+      color: $blue;
+    }
+    &:active {
+      color: black;
+    }
   }
 
   &__search {
@@ -60,9 +54,9 @@ $HeaderItem_height: 30px;
     @include Header_btn;
     right: 30px;
     color: #fff;
-    background: rgb(55, 55, 255);
+    background: $blue;
     &:hover {
-      background: rgb(55, 55, 220);
+      background: $blueHover;
     }
   }
 }
@@ -77,7 +71,7 @@ $HeaderItem_height: 30px;
   &__item {
     padding: 0 10px;
     text-align: center;
-    
+    font-weight: bold;
   }
 
   &__link {
@@ -90,7 +84,7 @@ $HeaderItem_height: 30px;
       left: 50%;
       display: block;
       width: 0%;
-      transition-duration: .5s;
+      transition-duration: .3s;
       border-bottom: 2px solid black;
     }
     &:hover {
@@ -100,4 +94,8 @@ $HeaderItem_height: 30px;
       }
     }
   }
+}
+
+.active {
+  color: $blue;
 }
