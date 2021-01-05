@@ -1,7 +1,14 @@
+import Header from "./components/Header/Header";
+import Layout from "./hoc/Layout/Layout";
+import DesignListPage from "./pages/DesignListPage/DesignListPage";
+
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <Header />
+      <Layout>
+        <DesignListPage /> 
+      </Layout>
     </div>
   );
 }
