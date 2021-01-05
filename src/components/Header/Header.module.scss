@@ -1,3 +1,103 @@
+$Header_height: 50px;
+$HeaderItem_height: 30px;
+
+@mixin Header_btn {
+  position: absolute;
+  height: $HeaderItem_height;
+  padding: 0 15px;
+  font-weight: bold;
+  border-radius: $HeaderItem_height / 2;
+  &:hover {
+    box-shadow: 0 0 5px -2px black;
+  }
+}
+
 .Header {
-  background: #ccc;
+  display: flex;
+  align-items: center;
+  height: $Header_height;
+  padding: 0 2vw;
+  border-bottom: 1px solid #ccc;
+  &:nth-child(n) {
+    line-height: $Header_height;
+  }
+
+  &__logo {
+    min-width: 80px;
+    color: black;
+    font-size: 1.8em;
+    font-weight: 900;
+    margin-right: 3%;
+  }
+
+  &__search {
+    width: 30%;
+    height: $HeaderItem_height;
+    padding: 0 15px 0 35px;
+    font-weight: bold;
+    border-radius: $HeaderItem_height / 2;
+    background: rgb(240, 240, 240);
+    &:hover {
+      background: rgb(225, 225, 230);
+    }
+    &:focus {
+      background: rgb(255, 255, 255);
+      box-shadow: 0 0 10px -4px black;
+    }
+  }
+
+  &__signIn {
+    @include Header_btn;
+    right: 170px;
+    background: #fff;
+    border: 1px solid #ccc;
+    &:hover {
+      background: rgb(245, 245, 245);
+    }
+  }
+
+  &__signUp {
+    @include Header_btn;
+    right: 30px;
+    color: #fff;
+    background: rgb(55, 55, 255);
+    &:hover {
+      background: rgb(55, 55, 220);
+    }
+  }
+}
+
+.navbar {
+  margin-right: 3%;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    padding: 0 10px;
+    text-align: center;
+    
+  }
+
+  &__link {
+    display: block;
+    height: $Header_height;
+    color: black;
+    &:after {
+      content: "";
+      position: relative;
+      left: 50%;
+      display: block;
+      width: 0%;
+      transition-duration: .5s;
+      border-bottom: 2px solid black;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
 }
