@@ -1,0 +1,40 @@
+@import '../../assets/scss/variables.scss';
+
+.Navigate {
+  margin-right: 3%;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    padding: 0 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__link {
+    display: block;
+    height: $Header_height;
+    color: black;
+    &:after {
+      content: "";
+      position: relative;
+      left: 50%;
+      display: block;
+      width: 0%;
+      transition-duration: .3s;
+      border-bottom: 2px solid black;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+.active {
+  color: $blue;
+}

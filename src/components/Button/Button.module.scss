@@ -1,0 +1,32 @@
+@import '../../assets/scss/variables.scss';
+
+.Button {
+  padding: 0 15px;
+  font-weight: bold;
+  height: $HeaderItem_height;
+  border-radius: $HeaderItem_height / 2;
+  transition-duration: .3s;
+  &:hover {
+    box-shadow: 0 0 5px -2px black;
+  }
+
+  &__signIn {
+    position: absolute;
+    right: 170px;
+    background: #fff;
+    border: 1px solid #ccc;
+    &:hover {
+      background: rgb(245, 245, 245);
+    }
+  }
+
+  &__signUp {
+    position: absolute;
+    right: 30px;
+    color: #fff;
+    background: $blue;
+    &:hover {
+      background: $blueHover;
+    }
+  }
+}

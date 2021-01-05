@@ -1,6 +1,8 @@
 import classes from './Header.module.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from 'react-router-dom'
+import Navigate from '../Navigate/Navigate';
+import Button from '../Button/Button';
 
 function Header() {
   const seachIconStyles = {
@@ -12,27 +14,17 @@ function Header() {
     <header className={classes.Header}>
       <NavLink to="/" exact className={classes.Header__logo}>D Y L</NavLink>
 
-      <nav className={classes.navbar}>
-        <ul className={classes.navbar__list}>
-          <li className={classes.navbar__item}>
-            <NavLink to="/" exact className={classes.navbar__link} activeClassName={classes.active}>Лучшие</NavLink>
-          </li>
-          <li className={classes.navbar__item}>
-            <NavLink to="/blog" className={classes.navbar__link} activeClassName={classes.active}>Блог</NavLink>
-          </li>
-          <li className={classes.navbar__item}>
-            <NavLink to="/vacancies" className={classes.navbar__link} activeClassName={classes.active}>Вакансии</NavLink>
-          </li>
-          <li className={classes.navbar__item}>
-            <NavLink to="/about" className={classes.navbar__link} activeClassName={classes.active}>О нас</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <Navigate />
+      
       <SearchIcon color="action" style={seachIconStyles} />
-      <input className={classes.Header__search} placeholder="Поиск..."/>
+      <input type="text" className={classes.Header__search} placeholder="Поиск..."/>
 
-      <button className={classes.Header__signIn}>Войти</button>
-      <button className={classes.Header__signUp}>Регистрация</button>
+      <Button type="signIn">
+        Войти
+      </Button>
+      <Button type="signUp">
+        Регистрация
+      </Button>
     </header>
   );
 }

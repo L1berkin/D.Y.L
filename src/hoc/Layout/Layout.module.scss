@@ -1,3 +1,9 @@
+@import '../../assets/scss/variables.scss';
+
 .Layout {
-  
+  width: 80%;
+  min-width: $minWidth-Layout;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
 }
