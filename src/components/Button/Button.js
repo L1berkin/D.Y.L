@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom'
 import classes from './Button.module.scss'
 
-function Button({children, type}) {
+function Button({children, type, link}) {
   const cls =[
     classes.Button
   ]
@@ -13,11 +14,20 @@ function Button({children, type}) {
     default: break
   }
 
+  if (link) {
+    cls.push(classes.Button__link)
+
+    return (
+      <NavLink to={'/' + link} className={cls.join(' ')}>
+        {children}
+      </NavLink>
+    )
+  }
+
   return (
     <button className={cls.join(' ')}>
       {children}
     </button>
-    
   )
 }
 

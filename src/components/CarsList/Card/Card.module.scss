@@ -1,5 +1,11 @@
 .Card {
-
+  display: block;
+  border-radius: 10px;
+  transition-duration: 500ms;
+  &:hover {
+    box-shadow: 5px 5px 10px 0 black;
+    margin: -5px 5px 5px -5px;
+  }
   &__wrapper {
     overflow: hidden;
     position: relative;

@@ -19,10 +19,10 @@ function Header() {
       <SearchIcon color="action" style={seachIconStyles} />
       <input type="text" className={classes.Header__search} placeholder="Поиск..."/>
 
-      <Button type="signIn">
+      <Button type="signIn" link="signIn">
         Войти
       </Button>
-      <Button type="signUp">
+      <Button type="signUp" link="signUp">
         Регистрация
       </Button>
     </header>

@@ -2,8 +2,9 @@ import classes from './Card.module.scss'
 import background from '../../../assets/images/card.jpg'
 import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'; // ES6
+import { NavLink } from 'react-router-dom';
 
-function Card() {
+function Card({link}) {
   const styles = {
     background: `url(${background})`,
     backgroundPosition: 'center',
@@ -13,7 +14,7 @@ function Card() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <div className={classes.Card}>
+    <NavLink to={'/' + link} className={classes.Card}>
       <div className={classes.Card__wrapper}>
         <div className={classes.Card__content} style={styles}
           onMouseOver={() => setVisible(true)}
@@ -37,7 +38,7 @@ function Card() {
         </div>
 
       </div>
-    </div>
+    </NavLink>
   )
 }
 
