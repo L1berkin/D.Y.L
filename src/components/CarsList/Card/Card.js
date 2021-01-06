@@ -1,6 +1,7 @@
 import classes from './Card.module.scss'
 import background from '../../../assets/images/card.jpg'
 import { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'; // ES6
 
 function Card() {
   const styles = {
@@ -18,14 +19,21 @@ function Card() {
           onMouseOver={() => setVisible(true)}
           onMouseOut={() => setVisible(false)}
         >
-          {visible 
-          ?<div className={classes.Card__footer}
+          <CSSTransition
+            in={visible}
+            timeout={500}
+            classNames={{
+              enter: classes.enter,
+              enterDone: classes.enterDone
+            }}
+            mountOnEnter
+            unmountOnExit
+          >
+            <div className={classes.Card__footer}
             >
               Name Surename
-            </div>
-            : null
-          }
-          
+          </div>
+          </CSSTransition>
         </div>
 
       </div>
