@@ -1,0 +1,36 @@
+.SignBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 10vh;
+  right: 10%;
+  width: 35%;
+  height: 80vh;
+  min-width: 400px;
+  border-radius: 50px;
+  box-shadow: 10px 10px 50px 0 black, inset 0 0 20px -10px black;
+  background: #fff;
+  & > * {
+    width: 80%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+      width: 100%;
+    }
+
+    button {
+      width: 80%;
+    }
+  }
+
+  .title {
+    padding: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

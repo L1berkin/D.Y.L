@@ -9,20 +9,25 @@ function Header() {
     position: 'relative',
     left: '30px'
   }
-
+  const links = [
+    {title: 'Лучшие', path: ''},
+    {title: 'Блог', path: 'blog'},
+    {title: 'Вакансии', path: 'vacancies'},
+    {title: 'О нас', path: 'about'}
+  ]
   return (
     <header className={classes.Header}>
       <NavLink to="/" exact className={classes.Header__logo}>D Y L</NavLink>
 
-      <Navigate />
+      <Navigate links={links} />
       
       <SearchIcon color="action" style={seachIconStyles} />
       <input type="text" className={classes.Header__search} placeholder="Поиск..."/>
-
-      <Button type="signIn" link="signIn">
+      <span />
+      <Button type="white" link="signIn">
         Войти
       </Button>
-      <Button type="signUp" link="signUp">
+      <Button type="blue" link="signUp">
         Регистрация
       </Button>
     </header>

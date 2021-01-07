@@ -7,9 +7,9 @@ import BlogPage from "./pages/BlogPage/BlogPage";
 import DesignersPage from "./pages/DesignersPage/DesignersPage";
 import VacanciesPage from "./pages/VacanciesPage/VacanciesPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import SignInPage from "./pages/SignInPage/SignInPage";
-import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import SignPage from "./pages/SignPage/SignPage";
 import CardPage from "./pages/CardPage/CardPage";
+import CreateVacPage from "./pages/CreateVacPage/CreateVacPage";
 
 function App() {
   return (
@@ -22,9 +22,10 @@ function App() {
           <Route path="/vacancies" component={VacanciesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/search" component={SearchPage} />
-          <Route path="/signIn" component={SignInPage} />
-          <Route path="/signUP" component={SignUpPage} />
+          <Route path="/signIn" component={SignPage} />
+          <Route path="/signUp" component={SignPage} />
           <Route path="/card" component={CardPage} />
+          <Route path="/createVac" component={CreateVacPage} />
           <Redirect to="/" />
         </Switch>
       </Layout>

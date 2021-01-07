@@ -44,4 +44,9 @@
       box-shadow: 0 0 10px -4px black;
     }
   }
+
+  span {
+    display: block;
+    flex-grow: 1;
+  }
 }

@@ -1,15 +1,23 @@
 import { NavLink } from 'react-router-dom'
 import classes from './Button.module.scss'
 
-function Button({children, type, link}) {
+function Button({children, type, link, size, onClick}) {
   const cls =[
     classes.Button
   ]
 
-  switch (type) {
-    case 'signIn': cls.push(classes.Button__signIn)
+  switch (size) {
+    case 'medium': cls.push(classes.Button__medium)
       break
-    case 'signUp': cls.push(classes.Button__signUp)
+    case 'big': cls.push(classes.Button__big)
+      break
+    default: break
+  }
+
+  switch (type) {
+    case 'white': cls.push(classes.Button__white)
+      break
+    case 'blue': cls.push(classes.Button__blue)
       break
     default: break
   }
@@ -25,7 +33,7 @@ function Button({children, type, link}) {
   }
 
   return (
-    <button className={cls.join(' ')}>
+    <button className={cls.join(' ')} onClick={onClick}>
       {children}
     </button>
   )

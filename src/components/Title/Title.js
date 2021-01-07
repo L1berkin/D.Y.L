@@ -1,8 +1,15 @@
 import classes from './Title.module.scss'
 
-function Title({ children, title }) {
+function Title({ children, title, background }) {
+  const cls = [
+    classes.Title
+  ]
+  if (background) {
+    cls.push(classes.Title_background)
+  }
+
   return (
-    <div className={classes.Title}>
+    <div className={cls.join(' ')}>
       <h2 className={classes.Title__text}>
         {title}
       </h2>

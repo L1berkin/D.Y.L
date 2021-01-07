@@ -1,5 +1,7 @@
 .Title {
-  width: 80%;
+  position: relative;
+  width: 100vw;
+  right: 5vw;
   min-width: 800px;
   min-height: 200px;
   display: flex;
@@ -7,6 +9,7 @@
   align-items: center;
   justify-content: center;  
   margin: 0 auto;
+  padding: 30px 0;
 
   &__text {
     font-weight: 900;
@@ -14,7 +17,8 @@
   }
 
   p {
-    margin-top: 15px;
+    width: 60%;
+    margin: 15px auto ;
     font-weight: bold;
     font-size: 1.4em;
   }
@@ -23,7 +27,7 @@
     font-weight: 900;
   }
 
-  a {
+  span {
     display: flex;
     align-items: center;
     color: rgb(115, 115, 115);
@@ -33,6 +37,14 @@
       color: rgb(76, 76, 76);
       text-decoration: underline;
     }
+  }
+
+  &_background {
+    color: #fff;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('../../assets/images/background-title.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 

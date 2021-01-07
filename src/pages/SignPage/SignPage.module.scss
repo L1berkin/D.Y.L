@@ -1,0 +1,43 @@
+@import '../../assets/scss/variables.scss';
+
+.SignPage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  background: url('../../assets/images/background-signIn.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  & > * {
+    z-index: 25;
+  }
+
+  a {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 2em;
+    color: #fff;
+    background: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 60px 80px black;
+    transition-duration: 1s;
+    &:hover {
+      color: $blue;
+      box-shadow: 0 0 5px 0 black;
+    }
+    &:active {
+      color: $blueHover;
+    }
+  }
+}
