@@ -2,13 +2,23 @@ import Button from '../Button/Button'
 import Input from '../Input/Input';
 import classes from './SignBox.module.scss'
 
-function SignBox({type}) {
-  const content = type === 'signIn' 
-    ? {title: 'Войти', password: 'Введите пароль'} 
-    : {title: 'Регистрация', password: 'Придумайте пароль'}
+function SignBox(props) {
+  let content;
+  const cls = [
+    classes.SignBox
+  ]
+
+  if (props.path === '/signIn') {
+    content = {title: 'Войти', password: 'Введите пароль'}
+    cls.push(classes.SignBox__right)
+  } else {
+    content = {title: 'Регистрация', password: 'Придумайте пароль'}
+    cls.push(classes.SignBox__left)
+  }
+
 
     return (
-    <section className={classes.SignBox}>
+    <section className={cls.join(' ')}>
       <h1 className={classes.title}>{content.title}</h1>
       <form>
         <Input
@@ -19,7 +29,7 @@ function SignBox({type}) {
           label={content.password}
           type="password"  
         />
-        {type === 'signUp'
+        {props.path === '/signUp'
         ? <Input
             label='Повторите пароль'
             type="password"  

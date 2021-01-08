@@ -3,11 +3,29 @@ import SignBox from '../../components/SignBox/SignBox';
 import classes from './SignPage.module.scss'
 
 
-function SignPage() {
+function SignPage(props) {
+  const path = props.match.path
+
+  const clsLink = [
+    classes.link
+  ]
+
+  const clsPage = [
+    classes.SignPage
+  ]
+
+  if (path === '/signIn') {
+    clsLink.push(classes.left)
+    clsPage.push(classes.SignPage__signIn)
+  } else {
+    clsLink.push(classes.right)
+    clsPage.push(classes.SignPage__signUp)
+  }
+  
   return (
-    <section className={classes.SignPage}>
-      <NavLink to="/">D Y L</NavLink>
-      <SignBox type="signUp" />
+    <section className={clsPage.join(' ')}>
+      <NavLink to="/" className={clsLink.join(' ')} >D Y L</NavLink>
+      <SignBox path={path} />
     </section>
   )
 }

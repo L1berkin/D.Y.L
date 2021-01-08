@@ -7,19 +7,27 @@
   right: 0;
   left: 0;
   z-index: 20;
-  background: url('../../assets/images/background-signIn.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  
+  &__signIn {
+    background: url('../../assets/images/background-signIn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__signUp  {
+    background: url('../../assets/images/background-signUp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
   
   & > * {
     z-index: 25;
   }
 
-  a {
+  .link {
     position: absolute;
-    top: 30%;
-    left: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,5 +47,14 @@
     &:active {
       color: $blueHover;
     }
+  }
+  .left {
+    top: 30%;
+    left: 20%;
+  }
+  
+  .right {
+    top: 30%;
+    right: 20%;
   }
 }
